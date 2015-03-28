@@ -1,3 +1,5 @@
+package org.sfeto.nongli;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -6,7 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-public class Lunar   
+public class Lunar
 {   
     private int year;   
     private int month;   
