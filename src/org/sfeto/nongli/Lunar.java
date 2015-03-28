@@ -258,11 +258,4 @@ public class Lunar
     {// 返回的月份的大或小   
         return Big_Or_Small[month - 1];   
     }   
-    public static void main(String[] args)
-    {
-        Lunar l = new Lunar(Calendar.getInstance());
-        System.out.println("我去今天是农历:" + l.get_month() + "月" + l.get_date() );
-
-    }
-  
 }  
