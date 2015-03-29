@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -33,7 +37,6 @@ public class HomeActivity extends Activity
 
 				((TextView)findViewById(R.id.hello)).setText("我去今天是农历:" + l.get_month() + "月" + l.get_date());
 			}
-        	
         }).start();
         addShortcutToDesktop();
     }
@@ -48,47 +51,28 @@ public class HomeActivity extends Activity
 			e.printStackTrace();
 		}
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, label);
-                Bitmap tempBitmap=drawTextBitmap(iconBitmapDrawabel.getBitmap(),"" + l.get_month() + "月\n" + l.get_date());
+		Bitmap iconBitmap = iconBitmapDrawabel.getBitmap();
+		Bitmap txtBitmap = GLFont.getImage(iconBitmap.getWidth(), iconBitmap.getHeight(), l.get_month() + "月" , l.get_date(), 56);
+		Bitmap tempBitmap = toConformBitmap(iconBitmap,txtBitmap);
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON, tempBitmap);
 		shortcut.putExtra("duplicate", false);
 		ComponentName comp = new ComponentName(label,"." + this.getLocalClassName());
 		shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Intent.ACTION_MAIN).setComponent(comp));
 		sendBroadcast(shortcut);
     }
-    public Bitmap drawTextBitmap(Bitmap gbitmap,String gText){
-            Resources resources = this.getResources();
-            float scale = resources.getDisplayMetrics().density;
-	    Bitmap bitmap = scaleWithWH(gbitmap, 300*scale, 300*scale);
-	    android.graphics.Bitmap.Config bitmapConfig =
-			      bitmap.getConfig();
-	    if(bitmapConfig == null) {
-			 bitmapConfig = android.graphics.Bitmap.Config.ARGB_8888;
-	    }
-	    bitmap = bitmap.copy(bitmapConfig, true);
-	    Canvas canvas = new Canvas(bitmap);
-	    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-	    paint.setColor(Color.RED);
-	    paint.setTextSize((int) (80 * scale));
-            paint.setDither(true);
-	    paint.setFilterBitmap(true);
-	    Rect bounds = new Rect();
-	    paint.getTextBounds(gText, 0, gText.length(), bounds);
-	    int x = 30;
-            int y = 30;
-            canvas.drawText(gText, x * scale, y * scale, paint);
-	    return bitmap;
-    }
-    public static Bitmap scaleWithWH(Bitmap src, double w, double h) {
-        if (w == 0 || h == 0 || src == null) {
-            return src;
-        } else {
-        int width = src.getWidth();
-        int height = src.getHeight();
-        Matrix matrix = new Matrix();
-        float scaleWidth = (float) (w / width);
-        float scaleHeight = (float) (h / height);
-        matrix.postScale(scaleWidth, scaleHeight);
-        return Bitmap.createBitmap(src, 0, 0, width, height, matrix, true);
+
+    private Bitmap toConformBitmap(Bitmap background, Bitmap foreground) {
+        if( background == null ) {
+           return null;
         }
+        int bgWidth = background.getWidth();
+        int bgHeight = background.getHeight();
+        Bitmap newbmp = Bitmap.createBitmap(bgWidth, bgHeight, Config.ARGB_8888);
+        Canvas cv = new Canvas(newbmp);
+        cv.drawBitmap(foreground, 0f, 0f, null);//在 0，0坐标开始画入fg ，可以从任意位置画入
+        cv.save(Canvas.ALL_SAVE_FLAG);//保存
+        cv.restore();//存储
+        return newbmp;
+
     }
 }
