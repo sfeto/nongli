@@ -3,7 +3,9 @@ package org.sfeto.nongli;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -17,13 +19,15 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.Calendar;
 
 public class HomeActivity extends Activity
 {
-    /** Called when the activity is first created. */
+    private static final String TAG = "Nongli";
+	/** Called when the activity is first created. */
     private Lunar l;
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -38,9 +42,38 @@ public class HomeActivity extends Activity
 				((TextView)findViewById(R.id.hello)).setText("我去今天是农历:" + l.get_month() + "月" + l.get_date());
 			}
         }).start();
+        removeShortcutFromDesktop();
         addShortcutToDesktop();
     }
-    void addShortcutToDesktop(){
+    private void removeShortcutFromDesktop() {
+    	Log.d(TAG, "removeShortcutFromDesktop");
+    	String packageName = getPackageName();
+		PackageManager pm = getPackageManager();
+		ApplicationInfo info;
+		try {
+			info = pm.getApplicationInfo(packageName, 0);
+
+			if (info != null) {
+				Intent shortcutIntent = pm
+						.getLaunchIntentForPackage(packageName);
+				if (shortcutIntent != null) {
+					final Intent removeIntent = new Intent();
+					removeIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT,
+							shortcutIntent);
+					removeIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME,
+							info.loadLabel(pm));
+					removeIntent.putExtra("duplicate", false);
+
+					removeIntent
+							.setAction("com.android.launcher.action.UNINSTALL_SHORTCUT");
+					sendBroadcast(removeIntent);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	void addShortcutToDesktop(){
 		Intent shortcut = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
 		BitmapDrawable iconBitmapDrawabel = null;
 		String label = this.getPackageName();
