@@ -50,7 +50,7 @@ public class HomeActivity extends Activity
 		} catch (PackageManager.NameNotFoundException e) {
 			e.printStackTrace();
 		}
-		shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, label);
+		shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Nongli");
 		Bitmap iconBitmap = iconBitmapDrawabel.getBitmap();
 		Bitmap txtBitmap = GLFont.getImage(iconBitmap.getWidth(), iconBitmap.getHeight(), l.get_month() + "月" , l.get_date(), 56);
 		Bitmap tempBitmap = toConformBitmap(iconBitmap,txtBitmap);
