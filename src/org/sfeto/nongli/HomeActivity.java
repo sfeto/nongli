@@ -26,7 +26,7 @@ import java.util.Calendar;
 
 public class HomeActivity extends Activity
 {
-    private static final String TAG = "Nongli";
+    public static final String TAG = "Nongli";
 	/** Called when the activity is first created. */
     private Lunar l;
     @Override
