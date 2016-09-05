@@ -11,16 +11,11 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     private String getString(int year, int month, int day) {
-        return new ChinaDateWrapper(year, month, day).getLunarStr();
+        return LunarTest.getString(year, month, day);
     }
 
     @Test
-    public void WrongDay3TestOK() throws Exception {
-        assertEquals("三月十一", getString(1989, 4, 16));
-    }
-
-    @Test
-    public void WrongDay3Test() throws Exception {
-        assertEquals("三月十二", getString(1989, 4, 17));
+    public void exampleTest() {
+        assertEquals(1 , 1);
     }
 }

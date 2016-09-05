@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  * Created by qinghao on 2016/9/5.
  */
 
-public class ChinaDateTest {
+public class LunarTest {
 
-    private String getString(int year, int month, int day) {
+    public static String getString(int year, int month, int day) {
         return new ChinaDateWrapper(year, month, day).getLunarStr();
     }
 
@@ -95,6 +95,25 @@ public class ChinaDateTest {
         assertNotEquals(getString(1988, 4, 10), getString(1988, 4, 11));
     }
 
+    @Test
+    public void Wrong20080101Test() {
+        assertEquals("冬月廿三", getString(2008, 1, 1));
+    }
+
+    @Test
+    public void Wrong20080108Test() {
+        assertEquals("腊月初一", getString(2008, 1, 8));
+    }
+
+    @Test
+    public void Wrong20080206Test() {
+        assertEquals("腊月三十", getString(2008, 2, 6));
+    }
+
+    @Test
+    public void Wrong20080207Test() {
+        assertEquals("正月初一", getString(2008, 2, 7));
+    }
 
     //TODO: single ton
 
