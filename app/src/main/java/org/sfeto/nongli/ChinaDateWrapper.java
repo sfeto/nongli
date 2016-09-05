@@ -4,10 +4,9 @@ package org.sfeto.nongli;
  * Created by qinghao on 2016/9/5.
  */
 
-import com.cnblogs.hongten.ChinaDate;
+import com.cnblogs.liuSiyuan.Lunar;
 
 import java.util.Calendar;
-import java.util.Locale;
 
 public class ChinaDateWrapper {
     private int year;

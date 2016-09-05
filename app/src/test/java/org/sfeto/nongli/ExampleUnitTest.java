@@ -19,7 +19,7 @@ public class ExampleUnitTest {
         assertEquals("三月十一", getString(1989, 4, 16));
     }
 
-    //@Test
+    @Test
     public void WrongDay3Test() throws Exception {
         assertEquals("三月十二", getString(1989, 4, 17));
     }

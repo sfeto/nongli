@@ -1,4 +1,4 @@
-package org.sfeto.nongli;
+package com.cnblogs.liuSiyuan;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -14,7 +14,7 @@ public class Lunar
     static String[] chineseMonthes = new String[]
             {"正", "二", "三", "四","五", "六", "七", "八", "九", "十", "冬", "腊" };
 
-    final static String chineseNumber[] =   
+    final static String chineseNumber[] =
     { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二" };   
     final static String Big_Or_Small[] =   
     { "大", "小", "大", "小", "大", "小", "大", "大", "小", "大", "小", "大" };   
