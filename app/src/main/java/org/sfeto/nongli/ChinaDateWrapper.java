@@ -22,11 +22,22 @@ public class ChinaDateWrapper {
         this.day = day;
     }
 
-    public String getLunarStr() {
-        String lunar_str = ChinaDate.oneDay(year, month, day);
-        int year_pos = lunar_str.lastIndexOf("年");
-        return lunar_str.substring(year_pos+1);
+    public ChinaDateWrapper() {
 
-        //long[] intluna = ChinaDate.calElement(2016, 9, 5);
+    }
+
+    public String getLunarStr() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month-1, day);
+        String lunar_str = new Lunar(cal).toString();
+        int year_pos = lunar_str.lastIndexOf("闰");
+        if (year_pos != -1)
+            return lunar_str.substring(year_pos+1);
+        return lunar_str;
+
+    }
+
+    public String getChinaDate(int day) {
+        return Lunar.getChinaDayString(day);
     }
 }
