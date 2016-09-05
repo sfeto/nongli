@@ -3,17 +3,17 @@ package org.sfeto.nongli;
 import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class Lunar
 {   
     private int year;   
     private int month;   
     private int day;   
-    private boolean leap;   
+    private boolean leap;
+
+    static String[] chineseMonthes = new String[]
+            {"正", "二", "三", "四","五", "六", "七", "八", "九", "十", "冬", "腊" };
+
     final static String chineseNumber[] =   
     { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二" };   
     final static String Big_Or_Small[] =   
@@ -221,8 +221,12 @@ public class Lunar
         { "初", "十", "廿", "卅" };   
         int n = day % 10 == 0 ? 9 : day % 10 - 1;   
         if (day > 30)   
-            return "";   
-        if (day == 10)   
+            return "";
+        if (day == 30)
+            return "三十";
+        if (day == 20)
+            return "二十";
+        if (day == 10)
             return "初十";   
         else  
             return chineseTen[day / 10] + chineseNumber[n];   
@@ -231,7 +235,7 @@ public class Lunar
     public String toString()   
     {   
         return /* cyclical() + "年" + */(leap ? "闰" : "")   
-                + chineseNumber[month - 1] + "月" + getChinaDayString(day);   
+                + chineseMonthes[month - 1] + "月" + getChinaDayString(day);
     }   
   
     public String numeric_md()   
