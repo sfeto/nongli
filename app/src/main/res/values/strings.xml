@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Nongli</string>
+    <string name="app_name">今天农历</string>
+    <string name="update_img">更新图片</string>
+    <string name="reset_img">重置图片</string>
 </resources>

@@ -23,10 +23,6 @@ public class ChinaDateWrapper {
         this.day = day;
     }
 
-    public ChinaDateWrapper() {
-
-    }
-
     public String getLunarStr() {
         Calendar cal = Calendar.getInstance();
         cal.set(year, month-1, day);

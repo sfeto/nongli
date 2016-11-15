@@ -1,13 +1,6 @@
 package org.sfeto.nongli;
 
-import com.cnblogs.hongten.ChinaDate;
-
 import org.junit.Test;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 import static org.junit.Assert.*;
 
@@ -113,6 +106,11 @@ public class LunarTest {
     @Test
     public void Wrong20080207Test() {
         assertEquals("正月初一", getString(2008, 2, 7));
+    }
+
+    @Test
+    public void Wrong20161115Test() {
+        assertEquals("十月十六", getString(2016, 11, 15));
     }
 
     //TODO: single ton
