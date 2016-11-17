@@ -2,7 +2,8 @@ package org.sfeto.nongli;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /*
  * Created by qinghao on 2016/9/5.
@@ -113,6 +114,14 @@ public class LunarTest {
         assertEquals("十月十六", getString(2016, 11, 15));
     }
 
-    //TODO: single ton
+    @Test
+    public void testMonthNameTest(){
+        String[] chineseMonthes = new String[]
+                {"正", "二", "三", "四","五", "六", "七", "八", "九", "十", "冬", "腊" };
+        for(int m=1;m<=12;m+=1) {
+            System.out.println(String.format("%02d月", m));
+            assertEquals(chineseMonthes[m-1], new ChinaDateWrapper().getChinaMonth(m));
+        }
+    }
 
 }

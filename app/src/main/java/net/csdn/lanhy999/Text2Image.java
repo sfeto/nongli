@@ -54,7 +54,7 @@ public class Text2Image {
                 icon_size, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint(textPaint.getFlags());
-        paint.setColor(-22490);
+        paint.setColor(0xffffa826);
         canvas.drawRoundRect(new RectF(0.0F, 0.0F, icon_size, icon_size), r, r, paint);
         canvas.translate((icon_size-layout.getWidth())/2, -r/2);
         layout.draw(canvas);

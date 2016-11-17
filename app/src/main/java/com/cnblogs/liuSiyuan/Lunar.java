@@ -1,8 +1,8 @@
 package com.cnblogs.liuSiyuan;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class Lunar
 {   
@@ -261,5 +261,23 @@ public class Lunar
     public String get_Big_Or_Small()   
     {// 返回的月份的大或小   
         return Big_Or_Small[month - 1];   
-    }   
+    }
+
+    public static String getChinaMonthString(int month){
+        if(month > chineseMonthes.length
+                || month < 1){
+            month = month % chineseMonthes.length;
+        } else {
+            month = month - 1;
+        }
+        return chineseMonthes[month];
+    }
+
+    public int getMonth(){
+        return this.month;
+    }
+
+    public int getDay(){
+        return this.day;
+    }
 }  

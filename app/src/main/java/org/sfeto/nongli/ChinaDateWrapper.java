@@ -12,9 +12,9 @@ public class ChinaDateWrapper {
     private int year;
     private int month;
     private int day;
-    final static String chineseNumber[] =
+    public final static String chineseNumber[] =
             { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二" };
-    static String[] ChineseMonthes = new String[]
+    public static String[] ChineseMonthes = new String[]
             {"正", "二", "三", "四","五", "六", "七", "八", "九", "十", "冬", "腊" };
 
     public ChinaDateWrapper(int year, int month, int day) {
@@ -22,6 +22,11 @@ public class ChinaDateWrapper {
         this.month = month;
         this.day = day;
     }
+
+    public ChinaDateWrapper(){
+
+    }
+
 
     public String getLunarStr() {
         Calendar cal = Calendar.getInstance();
@@ -37,5 +42,9 @@ public class ChinaDateWrapper {
 
     public String getChinaDate(int day) {
         return Lunar.getChinaDayString(day);
+    }
+
+    public String getChinaMonth(int month) {
+        return Lunar.getChinaMonthString(month);
     }
 }

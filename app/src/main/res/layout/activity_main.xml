@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
@@ -9,36 +9,22 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:id="@+id/img_nongli"
-        android:src="@drawable/nongli_icon" />
+        android:src="@drawable/nongli_icon"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:textAlignment="center">
+        android:orientation="vertical">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/update_img"
-            android:onClick="updateImg_onclick"
-            android:id="@+id/updateImg"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/reset_img"
-            android:onClick="resetImg_onclick"
-            android:id="@+id/resetImg"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Test"
-            android:onClick="test_onclick"
-            android:id="@+id/test"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resize"
-            android:onClick="resize_onclick"
-            android:id="@+id/resize"/>
+            android:onClick="change_onclick"
+            android:id="@+id/change"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </LinearLayout>
