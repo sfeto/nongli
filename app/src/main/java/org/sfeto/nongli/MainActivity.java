@@ -17,8 +17,9 @@ public class MainActivity extends Activity {
         String className = last_class.substring(last_class.lastIndexOf(".")+1).toLowerCase();
         int res_id;
         if (className.equals("MainActivity".toLowerCase())) {
-            Intent intent = new Intent(this, MyService.class);
-            startService(intent);
+            int hour = 00;
+            int minute = 00;
+            Alarmer.setAlarm(this, hour, minute);
             return;
         }
 
