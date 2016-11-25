@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "org.sfeto.nongli"
-        minSdkVersion 11
+        minSdkVersion 8
         targetSdkVersion 18
         versionCode 2016112501
         versionName "2.1.3"
