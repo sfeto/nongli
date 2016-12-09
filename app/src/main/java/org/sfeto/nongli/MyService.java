@@ -1,5 +1,6 @@
 package org.sfeto.nongli;
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
@@ -14,8 +15,9 @@ import com.cnblogs.liuSiyuan.Lunar;
 
 import java.util.Calendar;
 
-public class MyService extends Service {
+public class MyService extends IntentService {
     public MyService() {
+        super("MyService");
     }
 
     @Override
@@ -25,7 +27,7 @@ public class MyService extends Service {
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    protected void onHandleIntent(Intent intent) {
         int month = intent.getIntExtra("month", 0);
         int day = intent.getIntExtra("day", 0);
         if(month != 0 && day != 0){
@@ -33,7 +35,6 @@ public class MyService extends Service {
         } else {
             changeIcon();
         }
-        return super.onStartCommand(intent, flags, startId);
     }
 
     public static void saveConfig(Context context, String lastClassName){
@@ -69,9 +70,12 @@ public class MyService extends Service {
 
     public void changeIcon(String cls) {
         Context context = getBaseContext();
+        String last_cls = MyService.readConfig(context);
+        if (last_cls.equals(cls))
+            return;
         ComponentName last_cn = new ComponentName(
                 context,
-                MyService.readConfig(context));
+                last_cls);
         PackageManager pm = getApplicationContext().getPackageManager();
         pm.setComponentEnabledSetting(last_cn,
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,

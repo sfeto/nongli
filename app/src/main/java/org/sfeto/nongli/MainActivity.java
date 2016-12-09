@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 
@@ -24,24 +27,35 @@ public class MainActivity extends Activity {
         String last_class = MyService.readConfig(this);
         String className = last_class.substring(last_class.lastIndexOf(".")+1).toLowerCase();
         int res_id;
-        if (className.equals("MainActivity".toLowerCase())) {
-            int hour = 00;
-            int minute = 00;
-            Alarmer.setAlarm(this, hour, minute);
-            return;
+        /* if (className.equals("MainActivity".toLowerCase())) */ {
+            startAlarm();
         }
 
         res_id = getResources().getIdentifier(className, "drawable", getPackageName());
         ImageView img_nongli = (ImageView) findViewById(R.id.img_nongli);
         img_nongli.setImageResource(res_id);
     }
+
+    private void startAlarm() {
+        int hour = 00;
+        int minute = 00;
+        Alarmer.setAlarm(this, hour, minute);
+    }
+
     public void start_onclick(View view){
         startActivity(new Intent(this, HomeActivity.class));
     }
+
+    Handler handler = new Handler();
     public void change_onclick(View view){
-        Intent intent = new Intent(this, MyService.class);
-        startService(intent);
-        finish();
+        startAlarm();
+        long fiveSeconds= 9*1000;
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        }, fiveSeconds);
     }
 
     private void registerBroadcastReceiver()

@@ -12,5 +12,6 @@ public class DateChangedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         context.startService(new Intent(context, MyService.class));
+        Alarmer.nextDayAlarm(context);
     }
 }
