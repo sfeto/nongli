@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 
 public class MainActivity extends Activity {
+    static final int CHANGE_ICON = 9;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +26,6 @@ public class MainActivity extends Activity {
             }
         }).run();
 
-        String last_class = MyService.readConfig(this);
-        String className = last_class.substring(last_class.lastIndexOf(".")+1).toLowerCase();
-        int res_id;
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -34,11 +33,14 @@ public class MainActivity extends Activity {
             }
         }).run();
 
-        res_id = getResources().getIdentifier(className, "drawable", getPackageName());
-        if (res_id != 0) {
-            ImageView img_nongli = (ImageView) findViewById(R.id.img_nongli);
-            img_nongli.setImageResource(res_id);
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                handler.obtainMessage(MainActivity.CHANGE_ICON).sendToTarget();
+            }
+        }).run();
+
+
     }
 
     private void startAlarm() {
@@ -51,7 +53,22 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, HomeActivity.class));
     }
 
-    Handler handler = new Handler();
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch(msg.what){
+                case CHANGE_ICON:
+                    String last_class = MyService.readConfig(getApplicationContext());
+                    String className = last_class.substring(last_class.lastIndexOf(".")+1).toLowerCase();
+                    int res_id = getResources().getIdentifier(className, "drawable", getPackageName());
+                    if (res_id != 0) {
+                        ImageView img_nongli = (ImageView) findViewById(R.id.img_nongli);
+                        img_nongli.setImageResource(res_id);
+                    }
+                    break;
+            }
+        }
+    };
     public void change_onclick(View view){
         startAlarm();
         long fiveSeconds= 9*1000;

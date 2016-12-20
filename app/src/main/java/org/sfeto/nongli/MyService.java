@@ -1,7 +1,6 @@
 package org.sfeto.nongli;
 
 import android.app.IntentService;
-import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -71,6 +70,8 @@ public class MyService extends IntentService {
     public void changeIcon(String cls) {
         Context context = getBaseContext();
         String last_cls = MyService.readConfig(context);
+        Log.d("changeIcon", "last_cls:" +last_cls);
+        Log.d("changeIcon", "    _cls:" +cls);
         if (last_cls.equals(cls))
             return;
         ComponentName last_cn = new ComponentName(
