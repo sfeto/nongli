@@ -27,9 +27,12 @@ public class MainActivity extends Activity {
         String last_class = MyService.readConfig(this);
         String className = last_class.substring(last_class.lastIndexOf(".")+1).toLowerCase();
         int res_id;
-        /* if (className.equals("MainActivity".toLowerCase())) */ {
-            startAlarm();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                startAlarm();
+            }
+        }).run();
 
         res_id = getResources().getIdentifier(className, "drawable", getPackageName());
         if (res_id != 0) {
