@@ -32,8 +32,10 @@ public class MainActivity extends Activity {
         }
 
         res_id = getResources().getIdentifier(className, "drawable", getPackageName());
-        ImageView img_nongli = (ImageView) findViewById(R.id.img_nongli);
-        img_nongli.setImageResource(res_id);
+        if (res_id != 0) {
+            ImageView img_nongli = (ImageView) findViewById(R.id.img_nongli);
+            img_nongli.setImageResource(res_id);
+        }
     }
 
     private void startAlarm() {
