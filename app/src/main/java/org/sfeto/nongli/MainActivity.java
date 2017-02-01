@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.content.pm.PackageManager;
 import android.content.ComponentName;
 import android.widget.Toast;
+import android.net.Uri;
 
 
 public class MainActivity extends Activity {
@@ -110,6 +111,34 @@ public class MainActivity extends Activity {
             return true;
         }
         return false;
+    }
+
+    public void openDownloadPage(){
+        String download_page=getString(R.string.coolapk_url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+            Uri.parse(download_page));
+        startActivity(browserIntent);
+    }
+
+    public void openMarketApp(){
+        String download_page=getString(R.string.market_url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+            Uri.parse(download_page));
+        startActivity(browserIntent);
+    }
+    public void newver_onclick(View view){
+        android.util.Log.d(MainActivity.TAG, ""+Thread.currentThread().getStackTrace()[2].getMethodName());
+        try{
+            openMarketApp();
+        } catch (Exception em) {
+            try{
+                openDownloadPage();
+            } catch (Exception ec) {
+                Toast.makeText(getApplicationContext(),
+                    getString(R.string.no_browser),
+                    Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     public void change_onclick(View view){

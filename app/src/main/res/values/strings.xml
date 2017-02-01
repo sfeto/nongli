@@ -2,7 +2,10 @@
     <string name="app_name">LunarToday</string>
     <string name="update_img">Refresh icon</string>
     <string name="reset_img">Reset icon</string>
-    <string name="updating_img">Updating icon</string>
+    <string name="updating_img">Updating</string>
     <string name="updated_img">Launcher icon date will update in seconds</string>
-    <string name="coolapk_url">http://www.coolapk.com/apk/org.sfeto.nongli</string>
+    <string name="new_version">Update app</string>
+    <string name="no_browser">No market and browser found</string>
+    <string name="coolapk_url" translatable="false">http://www.coolapk.com/apk/org.sfeto.nongli</string>
+    <string name="market_url" translatable="false">market://details?id=org.sfeto.nongli</string>
 </resources>

@@ -2,6 +2,8 @@
     <string name="app_name">今天农历</string>
     <string name="update_img">更新图标</string>
     <string name="reset_img">重置图标</string>
-    <string name="updating_img">后台更新中</string>
+    <string name="updating_img">更新中</string>
+    <string name="no_browser">未找到应用市场和浏览器</string>
     <string name="updated_img">桌面图标日期会延迟几秒更新</string>
+    <string name="new_version">下载新版</string>
 </resources>
