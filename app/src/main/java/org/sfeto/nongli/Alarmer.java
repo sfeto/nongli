@@ -16,9 +16,10 @@ import java.util.Date;
 
 public class Alarmer {
 
-    private static final String TAG = "Alarmer";
+    private static final String TAG = MainActivity.TAG;
 
     public static void setAlarm(Context context, long triggerMilis){
+        android.util.Log.d(MainActivity.TAG, ""+Thread.currentThread().getStackTrace()[2].getMethodName());
         Log.d(TAG, "setAlarm");
         Log.d(TAG, "triMilis:" + triggerMilis);
         Log.d(TAG, "curr time:" + getTimeString(Calendar.getInstance().getTimeInMillis()));
@@ -57,6 +58,7 @@ public class Alarmer {
     }
 
     public static void setAlarm(Context context, int hour, int minute) {
+android.util.Log.d(MainActivity.TAG, ""+Thread.currentThread().getStackTrace()[2].getMethodName());
         setAlarm(context, getMilis(hour, minute, 0));
     }
 }

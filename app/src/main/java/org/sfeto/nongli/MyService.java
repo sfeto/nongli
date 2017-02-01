@@ -39,12 +39,14 @@ public class MyService extends IntentService {
     public static void saveConfig(Context context, String lastClassName){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPref.edit();
+        Log.d(MainActivity.TAG, "saveConfig"+lastClassName);
         editor.putString("lastClassName", lastClassName);
         editor.commit();
     }
 
     public static String readConfig(Context context){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        Log.d(MainActivity.TAG, "last_cn:" + sharedPref.getString("lastClassName", context.getPackageName()+".MainActivity"));
         return sharedPref.getString("lastClassName", context.getPackageName()+".MainActivity");
     }
 
@@ -67,13 +69,21 @@ public class MyService extends IntentService {
                 day);
     }
 
+    public static String getFullClassName(Context context) {
+        Lunar lunar = new Lunar(Calendar.getInstance());
+        return context.getPackageName()+
+                new MyService().getClassName(lunar.getMonth(), lunar.getDay());
+    }
+
     public void changeIcon(String cls) {
         Context context = getBaseContext();
         String last_cls = MyService.readConfig(context);
-        Log.d("changeIcon", "last_cls:" +last_cls);
-        Log.d("changeIcon", "    _cls:" +cls);
-        if (last_cls.equals(cls))
-            return;
+        Log.d(MainActivity.TAG, "last_cls:" +last_cls);
+        Log.d(MainActivity.TAG, "    _cls:" +cls);
+        // if (last_cls.equals(cls)){
+        //     Log.d(MainActivity.TAG, "last_cls.equals(cls)");
+        //     return;
+        // }
         ComponentName last_cn = new ComponentName(
                 context,
                 last_cls);
@@ -81,11 +91,11 @@ public class MyService extends IntentService {
         pm.setComponentEnabledSetting(last_cn,
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP);
-        Log.d("changeIcon", "lastcn:" +last_cn.getClassName());
+        Log.d(MainActivity.TAG, "lastcn:" +last_cn.getClassName());
         ComponentName cn = new ComponentName(
                 context,
                 cls);
-        Log.d("changeIcon", "cncncn:" + cn.getClassName());
+        Log.d(MainActivity.TAG, "cncncn:" + cn.getClassName());
         pm.setComponentEnabledSetting(cn,
                 PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                 PackageManager.DONT_KILL_APP);

@@ -12,10 +12,11 @@ import android.util.Log;
 
 public class DateChangedReceiver extends BroadcastReceiver {
 
-    private static final String TAG = DateChangedReceiver.class.getName();
+    private static final String TAG = MainActivity.TAG;
 
     @Override
     public void onReceive(Context context, Intent intent) {
+    	android.util.Log.d(MainActivity.TAG, ""+Thread.currentThread().getStackTrace()[2].getMethodName());
         Log.d(TAG, ""+intent.getAction());
         context.startService(new Intent(context, MyService.class));
         Alarmer.setNextAlarm(context);
