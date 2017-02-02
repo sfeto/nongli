@@ -7,8 +7,8 @@ android {
         applicationId "org.sfeto.nongli"
         minSdkVersion 8
         targetSdkVersion 18
-        versionCode 2017020201
-        versionName "2.1.8"
+        versionCode 2017020202
+        versionName "2.2.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

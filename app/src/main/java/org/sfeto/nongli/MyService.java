@@ -64,6 +64,15 @@ public class MyService extends IntentService {
     }
 
     private String getClassName(int month, int day) {
+        try {
+            String jieqi=new Jieqi(Calendar.getInstance()).getJieqiClassName();
+            Log.d(MainActivity.TAG, "jieqi"+jieqi);
+            if (jieqi!= null && jieqi.trim().length()>5){
+                return String.format(".%s", jieqi);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return String.format(".Luna%02d%02d",
                 month,
                 day);

@@ -6502,6 +6502,367 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+        <activity
+            android:name=".Jieqi01aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi01aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi01aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi01aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi01bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi01bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi01bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi01bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi02aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi02aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi02aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi02aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi02bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi02bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi02bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi02bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi03aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi03aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi03aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi03aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi03bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi03bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi03bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi03bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi04aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi04aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi04aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi04aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi04bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi04bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi04bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi04bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi05aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi05aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi05aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi05aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi05bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi05bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi05bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi05bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi06aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi06aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi06aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi06aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi06bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi06bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi06bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi06bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi07aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi07aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi07aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi07aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi07bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi07bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi07bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi07bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi08aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi08aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi08aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi08aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi08bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi08bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi08bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi08bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi09aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi09aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi09aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi09aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi09bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi09bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi09bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi09bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi10aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi10aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi10aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi10aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi10bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi10bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi10bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi10bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi11aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi11aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi11aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi11aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi11bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi11bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi11bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi11bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi12aa"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi12aa"
+            android:enabled="false"
+            android:icon="@drawable/jieqi12aa"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi12aa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name=".Jieqi12bb"
+            android:exported="true"/>
+        <activity-alias
+            android:name=".Jieqi12bb"
+            android:enabled="false"
+            android:icon="@drawable/jieqi12bb"
+            android:label="@string/app_name"
+            android:targetActivity=".Jieqi12bb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
         <service
             android:name=".MyService"
             android:enabled="true"
@@ -6522,4 +6883,3 @@
     </application>
 
 </manifest>
-
