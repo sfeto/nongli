@@ -33,5 +33,11 @@
             android:onClick="newver_onclick"
             android:id="@+id/newver"
             android:layout_gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/version"
+            android:text=""
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </LinearLayout>

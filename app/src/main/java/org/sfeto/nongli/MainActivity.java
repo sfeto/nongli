@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.content.pm.PackageManager;
 import android.content.ComponentName;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.net.Uri;
 
@@ -20,6 +22,7 @@ public class MainActivity extends Activity {
     static final int CHANGE_ICON = 9;
     static final int CHANGE_TEXT = 99;
     static final int ICON_CHANGED=999;
+    static final int SHOW_VERSION = 9999;
     public static String TAG="nongli";
     boolean is_updating=true;
 
@@ -49,6 +52,12 @@ public class MainActivity extends Activity {
             }
         }).run();
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                handler.obtainMessage(MainActivity.SHOW_VERSION).sendToTarget();
+            }
+        }).run();
 
     }
 
@@ -71,6 +80,9 @@ public class MainActivity extends Activity {
             android.util.Log.d(MainActivity.TAG, ""+Thread.currentThread().getStackTrace()[2].getMethodName());
 
             switch(msg.what){
+                case SHOW_VERSION:
+                    showVersionName();
+                    break;
                 case ICON_CHANGED:
                     is_updating=false;
                     Toast.makeText(getApplicationContext(),
@@ -139,6 +151,27 @@ public class MainActivity extends Activity {
                     Toast.LENGTH_LONG).show();
             }
         }
+        showVersionName();
+    }
+
+    private void showVersionName() {
+        TextView txt_version = (TextView) findViewById(R.id.version);
+        txt_version.setText(getVersionName());
+    }
+
+    private String getVersionName() {
+        Context context=getApplicationContext();
+        PackageManager pm = context.getPackageManager();
+        PackageInfo info = null;
+        try {
+            info = pm.getPackageInfo(
+                    context.getPackageName(), 0);
+            String version = info.versionName;
+            return version;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public void change_onclick(View view){
